@@ -92,7 +92,7 @@ steps:
   commands:
     - apk -U add ca-certificates libressl postgresql-client postgresql-dev build-base make
     - update-ca-certificates
-    - "echo 'gem: --no-document' > /etc/gemrc && gem install bundler -v 2.1.0"
+    - "echo 'gem: --no-document' > /etc/gemrc && gem install bundler -v 2.1.4"
     - cd platform-hub-api
     - bundle install --jobs 20 --retry 5 --deployment
     - ./test.sh
@@ -206,4 +206,4 @@ services:
     POSTGRES_PASSWORD: phub_password
 volumes:
  - name: dockersock
-   temp: {} 
+   temp: {}
